@@ -15,5 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "spotify-web-api-node": "^2.3.6"
   }
 }

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World!</title>
+        <link rel="stylesheet" href="./css/css.css">
+    </head>
+    <body>
+        <img src="" alt="Cover image." class="album-cover">
+        <h1>Song</h1>
+        <h2>Artist</h2>
+        <h3>Album</h3>
+        <button type="button" class="button-playpause">PLAYPAUSE</button>
+    </body>
 
-  <script>
-    // You can also require other files to run in this process
-    require('./js/index.js')
-  </script>
+    <script>
+        window.$ = window.jQuery = require('../bower_components/jquery/dist/jquery.min.js');
+        require('./js/index.js');
+    </script>
 </html>
