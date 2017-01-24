@@ -1,0 +1,19 @@
+{
+  "name": "tinify",
+  "version": "0.0.1",
+  "description": "A tiny player for spotify.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/ivmelo/tinify",
+  "keywords": [
+    "Spotify",
+    "Player"
+  ],
+  "author": "Ivanilson Melo",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}
