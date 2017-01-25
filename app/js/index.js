@@ -18,7 +18,6 @@ $(document).ready(function(){
     $('.button-next').on('click', function(){
         console.log('next');
         spotify.next();
-        ipc.send('song-changed', 'track');
     });
 
     $('.button-previous').on('click', function(){
@@ -62,7 +61,9 @@ function updateDisplay(track) {
         var album_cover = data.body.album.images[0].url;
         $('.cover-image').attr('src', album_cover);
         $('body').css('background-image', 'url("' + album_cover + '")');
-        console.log('NEW SONG');
+        ipc.send('song-changed', data); // Notify main proccess.
+
+        console.log(data);
     }, function(err) {
         console.error(err);
     });
