@@ -28,11 +28,6 @@ body {
     left: 0;*/
 }
 
-.controls {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .paddingless-right {
     padding-right: 0px;
 }
@@ -56,6 +51,12 @@ body {
 
 .info h1 {
     font-size: 1.5em;
+    /* Display 2 lines only, with elipisis... */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
 }
 
 .info h2 {
@@ -64,14 +65,55 @@ body {
 
 .info h3 {
     font-size: 1em;
+    margin-top: .18em;
+}
+
+.controls {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .player-button {
-    color: white;
+    color: #fff;
     background: none;
     border: none;
+    width: 50px;
+    height: 50px;
+    margin: 0 8px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    text-align: center;
+    outline: none;
+    border: 2px solid #fff;
 }
 
 .player-button:active {
     outline: none;
+}
+
+/*CSS ANIMATION*/
+.c--anim-btn span {
+  display: block;
+}
+
+.c--anim-btn, .c-anim-btn {
+  transition: 0.2s;
+}
+
+.c--anim-btn {
+  height: 110px;
+  overflow: hidden;
+  width: 235px;
+}
+
+.c-anim-btn{
+  margin-top: 0em;
+  min-height: 110px;
+  padding: 10px;
+}
+
+.c--anim-btn:hover .c-anim-btn{
+  margin-top: -110px;
 }
