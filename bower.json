@@ -1,0 +1,26 @@
+{
+  "name": "tinify",
+  "description": "A tiny player for spotify.",
+  "main": "main.js",
+  "authors": [
+    "Ivanilson Melo"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Spotify",
+    "Player"
+  ],
+  "homepage": "https://github.com/ivmelo/tinify",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.7.0"
+  }
+}
