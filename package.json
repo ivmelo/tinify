@@ -17,6 +17,7 @@
     "electron": "^1.4.1"
   },
   "dependencies": {
+    "spotify-node-applescript": "^1.0.0",
     "spotify-web-api-node": "^2.3.6"
   }
 }
