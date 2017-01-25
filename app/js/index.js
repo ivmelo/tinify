@@ -16,13 +16,25 @@ $(document).ready(function(){
     });
 
     $('.button-next').on('click', function(){
-        console.log('next');
         spotify.next();
+        console.log('next');
+        spotify.getTrack(function(err, track){
+            if (nowPlayingTrackId != track.id) {
+                nowPlayingTrackId = track.id;
+                updateDisplay(track);
+            }
+        });
     });
 
     $('.button-previous').on('click', function(){
-        console.log('previous');
         spotify.previous();
+        console.log('previous');
+        spotify.getTrack(function(err, track){
+            if (nowPlayingTrackId != track.id) {
+                nowPlayingTrackId = track.id;
+                updateDisplay(track);
+            }
+        });
     });
 
     spotify.getTrack(function(err, track){

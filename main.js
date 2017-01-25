@@ -6,9 +6,9 @@ const url = require('url');
 const ipc = electron.ipcMain;
 const notifier = require('node-notifier');
 
-let mainWindow
+let mainWindow;
 
-function createWindow () {
+app.on('ready', function() {
     mainWindow = new BrowserWindow({
         width: 345,
         height: 110,
@@ -25,10 +25,6 @@ function createWindow () {
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
-}
-
-app.on('ready', function(){
-    createWindow();
 });
 
 // Quit when all windows are closed.
