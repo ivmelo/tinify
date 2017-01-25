@@ -4,10 +4,74 @@ body {
 
     /*background-image: on code*/
     background-size: cover;
+    background-size: 120%;
     background-position: center;
     color: white;
+    margin: 0;
+
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    overflow: hidden;
 }
 
-.album-cover {
+.cover-image {
     width: 100%;
+}
+
+.info {
+    /*position: absolute;*/
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /*padding: 8px;*/
+    /*width: 334px;*/
+    /*right: 0px;
+    left: 0;*/
+}
+
+.controls {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.paddingless-right {
+    padding-right: 0px;
+}
+
+.paddingless-left {
+    padding-left: 0px;
+}
+
+.paddingless {
+    padding: 0px;
+}
+
+.padded-4 {
+    padding: 4px;
+}
+
+.info h1, h2, h3, h4, h5, h6 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.info h1 {
+    font-size: 1.5em;
+}
+
+.info h2 {
+    font-size: 1.3em;
+}
+
+.info h3 {
+    font-size: 1em;
+}
+
+.player-button {
+    color: white;
+    background: none;
+    border: none;
+}
+
+.player-button:active {
+    outline: none;
 }

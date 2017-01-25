@@ -3,14 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <title>Hello World!</title>
+        <link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/css.css">
     </head>
     <body>
-        <img src="" alt="Cover image." class="album-cover">
-        <h1>Song</h1>
-        <h2>Artist</h2>
-        <h3>Album</h3>
-        <button type="button" class="button-playpause">PLAYPAUSE</button>
+
+        <div class="row info">
+            <div class="col-xs-4 paddingless-right album-cover">
+                <img src="http://d30j0ipo6imng1.cloudfront.net/static/images/features/listen/album-placeholder.f97c23852f00.png" class="cover-image">
+            </div>
+            <div class="col-xs-8 paddingless-left album-info padded-4">
+                <h1 class="info-song">Song</h1>
+                <h2 class="info-artist">Artist</h2>
+                <h3 class="info-album">Album</h3>
+
+                <div class="controls">
+                    <button type="button" class="player-button button-previous"><i class="fa fa-step-backward fa-2x" aria-hidden="true"></i></button>
+                    <button type="button" class="player-button button-playpause"><i class="fa fa-play fa-2x" aria-hidden="true"></i></button>
+                    <button type="button" class="player-button button-next"><i class="fa fa-step-forward fa-2x" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <span class="duration-current">0:00</span>/<span class="duration-total">0:00</span>
+
+        <div class="controls">
+            <button type="button" class="player-button button-previous"><i class="fa fa-step-backward fa-2x" aria-hidden="true"></i></button>
+            <button type="button" class="player-button button-playpause"><i class="fa fa-play fa-2x" aria-hidden="true"></i></button>
+            <button type="button" class="player-button button-next"><i class="fa fa-step-forward fa-2x" aria-hidden="true"></i></button>
+        </div> -->
+
     </body>
 
     <script>
