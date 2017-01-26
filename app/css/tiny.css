@@ -1,0 +1,113 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    /*background-image: on code*/
+    background-size: cover;
+    background-size: 120%;
+    background-position: center;
+    color: white;
+    margin: 0;
+
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    overflow: hidden;
+
+    /*text-transform: uppercase;*/
+
+}
+
+.cover-image {
+    width: 100%;
+}
+
+.info {
+    /*position: absolute;*/
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /*padding: 8px;*/
+    /*width: 334px;*/
+    /*right: 0px;
+    left: 0;*/
+}
+
+.paddingless-right {
+    padding-right: 0px;
+}
+
+.paddingless-left {
+    padding-left: 0px;
+}
+
+.paddingless {
+    padding: 0px;
+}
+
+.info h1, h2, h3, h4, h5, h6 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.info h1 {
+    font-size: 1em;
+    /* Display 2 lines only, with elipisis... */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: .1em;
+    /*display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    font-weight: normal;
+}
+
+.info h2 {
+    font-size: 0.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    font-weight: normal;
+}
+
+.info h3 {
+    font-size: 1em;
+    margin-top: .18em;
+}
+
+.track-info {
+    padding: .3em;
+}
+
+.controls {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.player-button {
+    color: #fff;
+    background: none;
+    border: none;
+    margin: 0 6px;
+    border-radius: 50%;
+    font-size: 1em;
+    text-align: center;
+    outline: none;
+}
+
+.player-button:active {
+    outline: none;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 2px;
+    color: #fff;
+    background-color: #fff;
+}
+
+.progress-bar-container {
+    margin: .5em 0;
+    width: 100%;
+}

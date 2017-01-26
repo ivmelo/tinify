@@ -10,10 +10,11 @@ let mainWindow;
 
 app.on('ready', function() {
     mainWindow = new BrowserWindow({
-        width: 345,
-        height: 110,
+        width: 180, // used to be 345
+        height: 50, // used to be 110
         // resizable: false, // TODO: Set true when ready.
         frame: false,
+        alwaysOnTop: true,
     });
 
     mainWindow.loadURL(url.format({
@@ -57,4 +58,8 @@ ipc.on('song-changed', function(event, args){
         // icon: albumCoverUrl, // TODO: Add app icon later.
         contentImage: albumCoverUrl
     });
+});
+
+ipc.on('resize-player', function(){
+    // mainWindow.setSize(180, 50, true);
 });

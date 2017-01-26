@@ -4,7 +4,6 @@ var SpotifyWebApi = require('spotify-web-api-node');
 
 var spotifyApi = new SpotifyWebApi();
 var nowPlayingTrackId = null;
-var nowPlayingTrackDuration = null;
 
 $(document).ready(function(){
 
@@ -14,8 +13,6 @@ $(document).ready(function(){
         $(this).children().first().toggleClass('fa-play');
         $(this).children().first().toggleClass('fa-pause');
         spotify.playPause();
-        ipc.send('resize-player');
-
     });
 
     $('.button-next').on('click', function(){
@@ -40,14 +37,11 @@ $(document).ready(function(){
         });
     });
 
-    // UI.
-    $('.player-info').mouseover(function(){
-        $('.track-info').hide();
-    }).mouseout(function(){
-        $('.track-info').show();
-    });
+    // App actions.
 
-    // Backend...
+    $('.button-resize').on('click', function(){
+        ipc.send('resize-player');
+    });
 
     spotify.getTrack(function(err, track){
         updateDisplay(track);
@@ -59,31 +53,9 @@ $(document).ready(function(){
     (function(){
         spotify.getTrack(function(err, track){
             if (nowPlayingTrackId != track.id) {
+                nowPlayingTrackId = track.id;
                 updateDisplay(track);
             }
-        });
-
-        // Repeat every minute.
-        setTimeout(arguments.callee, 1000);
-    })();
-
-    (function(){
-        spotify.getState(function(err, state){
-            /*
-            state = {
-                volume: 99,
-                position: 232,
-                state: 'playing'
-            }
-            */
-
-            // var progress = (state.position / nowPlayingTrackDuration) * 100;
-
-            var progress = ((state.position * 1000) / nowPlayingTrackDuration) * 100;
-
-            console.log(state.position * 1000 + ' - ' + nowPlayingTrackDuration + ' - ' + progress.toFixed(2));
-
-            $('.progress-bar').css('width', progress + '%');
         });
 
         // Repeat every minute.
@@ -94,14 +66,9 @@ $(document).ready(function(){
 
 // Updates the music metadata being displayed on the screen.
 function updateDisplay(track) {
-    nowPlayingTrackId = track.id;
-    nowPlayingTrackDuration = track.duration;
-
     $('.info-song').html(track.name);
-    // $('.info-artist').html(track.artist);
-    // $('.info-album').html(track.album);
-    $('.info-artist-album').html(track.artist + ' - ' + track.album);
-
+    $('.info-artist').html(track.artist);
+    $('.info-album').html(track.album);
 
     // Split to get the track alphanumeric ID.
     var trackId = track.id.split(':')[2];
