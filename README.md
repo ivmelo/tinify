@@ -1,3 +1,5 @@
+![Logo](http://i.imgur.com/KSqScxV.png)
+
 # Tinify
 
 A tiny player for Spotify.
