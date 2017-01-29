@@ -8,13 +8,17 @@ const notifier = require('node-notifier');
 
 let mainWindow;
 
-app.on('ready', function() {
+function createWindow() {
     mainWindow = new BrowserWindow({
         width: 180, // used to be 345
         height: 50, // used to be 110
         // resizable: false, // TODO: Set true when ready.
         frame: false,
         alwaysOnTop: true,
+        // background color of the page, this prevents any white flickering
+        backgroundColor: "#111",
+        // Don't show the window until it's ready, this prevents any white flickering
+        show: false
     });
 
     mainWindow.loadURL(url.format({
@@ -23,10 +27,17 @@ app.on('ready', function() {
         slashes: true
     }));
 
+    // Show window when page is ready
+    mainWindow.once('ready-to-show', function () {
+        mainWindow.show()
+    })
+
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
-});
+}
+
+app.once('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
