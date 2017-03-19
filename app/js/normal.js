@@ -58,7 +58,7 @@ $(document).ready(function(){
             }
         });
 
-        // Repeat every minute.
+        // Repeat every second.
         setTimeout(arguments.callee, 1000);
     })();
 
